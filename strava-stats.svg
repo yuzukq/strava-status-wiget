@@ -1,0 +1,45 @@
+<svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      fill: #333;
+    }
+    .label {
+      font-size: 12px;
+      fill: #666;
+    }
+    .value {
+      font-size: 18px;
+      font-weight: bold;
+      fill: #FC4C02; /* Strava Orange */
+    }
+    @media (prefers-color-scheme: dark) {
+      .text { fill: #eee; }
+      .label { fill: #aaa; }
+    }
+  </style>
+  
+  <!-- 背景（透明） -->
+  <rect width="100%" height="100%" fill="none" />
+  
+  <!-- タイトル -->
+  <text x="20" y="30" class="text" style="font-size: 16px; font-weight: bold;">Weekly Ride Effort</text>
+  
+  <!-- 距離 -->
+  <text x="20" y="60" class="label">Distance</text>
+  <text x="280" y="60" class="value" text-anchor="end">20.9 km</text>
+  <rect x="20" y="70" width="200" height="10" rx="5" fill="#ddd" />
+  <rect x="20" y="70" width="0" height="10" rx="5" fill="#FC4C02">
+    <animate attributeName="width" from="0" to="20.931" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+  </rect>
+
+  <!-- 時間 -->
+  <text x="20" y="100" class="label">Time</text>
+  <text x="280" y="100" class="value" text-anchor="end">0.9 h</text>
+  <rect x="20" y="110" width="200" height="10" rx="5" fill="#ddd" />
+  <rect x="20" y="110" width="0" height="10" rx="5" fill="#FC4C02">
+    <animate attributeName="width" from="0" to="18.927777777777777" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+  </rect>
+  
+  <text x="20" y="140" class="label" style="font-size: 10px;">Last 7 Days</text>
+</svg>

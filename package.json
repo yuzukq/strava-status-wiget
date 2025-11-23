@@ -1,0 +1,25 @@
+{
+  "name": "strava-status-wiget",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuzukq/strava-status-wiget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuzukq/strava-status-wiget/issues"
+  },
+  "homepage": "https://github.com/yuzukq/strava-status-wiget#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "node-fetch": "^3.3.2"
+  }
+}
