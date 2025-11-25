@@ -34,8 +34,9 @@ jobs:
       - name: Generate SVGs
         env:
           ACCESS_TOKEN: ${{ steps.refresh_token.outputs.access_token }}
-          # Set your monthly goal here (km). You can also use ${{ vars.MONTHLY_GOAL_KM }} if configured.
-          MONTHLY_GOAL_KM: 200
+          MONTHLY_GOAL_KM: ${{ vars.MONTHLY_GOAL_KM }}
+          WEEKLY_GOAL_KM: ${{ vars.WEEKLY_GOAL_KM }}
+          WEEKLY_GOAL_HOURS: ${{ vars.WEEKLY_GOAL_HOURS }}
         run: |
           node src/generate_weekly_svg.js
           node src/generate_gear_svg.js
