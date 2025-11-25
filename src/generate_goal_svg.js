@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 
 const accessToken = process.env.ACCESS_TOKEN;
-const monthlyGoalKm = 200; // デフォルト200km
+const monthlyGoalKm = parseFloat(process.env.MONTHLY_GOAL_KM) || 200; // デフォルト200km
 
 if (!accessToken) {
   console.error('エラー: 環境変数 ACCESS_TOKEN が見つかりません。');
