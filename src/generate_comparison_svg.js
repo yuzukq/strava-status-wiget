@@ -141,8 +141,8 @@ async function main() {
     console.log('Weekly Distances:', weeks.map(w => `${w.start.toLocaleDateString()}: ${w.distance.toFixed(1)}km`));
 
     const svgContent = generateSVG(weeks);
-    fs.writeFileSync('four_week_comparison.svg', svgContent);
-    console.log('four_week_comparison.svg を生成しました。');
+    fs.writeFileSync('widgets/four_week_comparison.svg', svgContent);
+    console.log('widgets/four_week_comparison.svg を生成しました。');
 
   } catch (error) {
     console.error('エラーが発生しました:', error);

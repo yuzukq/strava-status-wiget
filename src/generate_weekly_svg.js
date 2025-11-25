@@ -121,8 +121,8 @@ async function main() {
     console.log('統計情報:', stats);
     
     const svgContent = generateSVG(stats);
-    fs.writeFileSync('strava-stats.svg', svgContent);
-    console.log('strava-stats.svg を生成しました。');
+    fs.writeFileSync('widgets/weekly_stats.svg', svgContent);
+    console.log('widgets/weekly_stats.svg を生成しました。');
     
   } catch (error) {
     console.error('エラー:', error);

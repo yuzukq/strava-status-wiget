@@ -37,7 +37,7 @@ jobs:
           # Set your monthly goal here (km). You can also use ${{ vars.MONTHLY_GOAL_KM }} if configured.
           MONTHLY_GOAL_KM: 200
         run: |
-          node src/generate_svg.js
+          node src/generate_weekly_svg.js
           node src/generate_gear_svg.js
           node src/generate_comparison_svg.js
           node src/generate_goal_svg.js
@@ -46,4 +46,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update Strava stats widgets [skip ci]"
-          file_pattern: "*.svg"
+          file_pattern: "widgets/*.svg"

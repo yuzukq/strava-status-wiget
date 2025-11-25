@@ -127,8 +127,8 @@ async function main() {
     console.log(`Favorite Gear: ${gear.name} (${gear.distance}m)`);
 
     const svgContent = generateSVG(gear);
-    fs.writeFileSync('favorite_gear.svg', svgContent);
-    console.log('favorite_gear.svg を生成しました。');
+    fs.writeFileSync('widgets/favorite_gear.svg', svgContent);
+    console.log('widgets/favorite_gear.svg を生成しました。');
 
   } catch (error) {
     console.error('エラーが発生しました:', error);

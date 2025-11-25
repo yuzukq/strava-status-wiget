@@ -94,8 +94,8 @@ async function main() {
     console.log(`Current Month Distance: ${currentDistance.toFixed(1)}km / Goal: ${monthlyGoalKm}km`);
 
     const svgContent = generateSVG(currentDistance, monthlyGoalKm);
-    fs.writeFileSync('monthly_goal.svg', svgContent);
-    console.log('monthly_goal.svg を生成しました。');
+    fs.writeFileSync('widgets/monthly_goal.svg', svgContent);
+    console.log('widgets/monthly_goal.svg を生成しました。');
 
   } catch (error) {
     console.error('エラーが発生しました:', error);
