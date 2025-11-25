@@ -37,9 +37,9 @@ function generateSVG(stats) {
   const barMax = 200; // 棒グラフの最大幅（px）
   
   // 棒グラフ用に値を正規化（表示のための最大目標を仮定）
-  // 例: 週間100km目標、週間10時間目標
-  const maxDist = 100; 
-  const maxTime = 10;
+  // 環境変数から目標値を取得（デフォルト: 100km, 10時間）
+  const maxDist = parseFloat(process.env.WEEKLY_GOAL_KM) || 100; 
+  const maxTime = parseFloat(process.env.WEEKLY_GOAL_HOURS) || 10;
   
   // 棒が最大幅を超えないようにする
   const distWidth = Math.min(barMax, (stats.distance / maxDist) * barMax);
@@ -121,8 +121,8 @@ async function main() {
     console.log('統計情報:', stats);
     
     const svgContent = generateSVG(stats);
-    fs.writeFileSync('strava-stats.svg', svgContent);
-    console.log('strava-stats.svg を生成しました。');
+    fs.writeFileSync('widgets/weekly_stats.svg', svgContent);
+    console.log('widgets/weekly_stats.svg を生成しました。');
     
   } catch (error) {
     console.error('エラー:', error);

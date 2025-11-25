@@ -1,0 +1,29 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .title { font-size: 14px; font-weight: bold; fill: #666; }
+    .status { font-size: 12px; fill: #333; }
+    .percentage { font-size: 24px; font-weight: bold; fill: #FC4C02; }
+    .goal-text { font-size: 10px; fill: #999; }
+    @media (prefers-color-scheme: dark) {
+      .title { fill: #aaa; }
+      .status { fill: #eee; }
+    }
+  </style>
+  
+  <rect width="100%" height="100%" fill="none" />
+  
+  <text x="20" y="25" class="title text">Monthly Goal</text>
+  <text x="280" y="25" text-anchor="end" class="percentage text">70%</text>
+  
+  <!-- プログレスバー背景 -->
+  <rect x="20" y="40" width="260" height="12" rx="6" fill="#eee" />
+  
+  <!-- プログレスバー本体 -->
+  <rect x="20" y="40" width="0" height="12" rx="6" fill="#FC4C02">
+    <animate attributeName="width" from="0" to="182.59930000000003" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+  </rect>
+  
+  <text x="20" y="70" class="status text">140.5 km / 200 km</text>
+  <text x="280" y="70" text-anchor="end" class="goal-text text">59.5 km to go</text>
+</svg>

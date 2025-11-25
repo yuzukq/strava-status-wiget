@@ -29,15 +29,22 @@ jobs:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
-        run: node get_tokens.js
+        run: node src/get_tokens.js
 
-      - name: Generate SVG
+      - name: Generate SVGs
         env:
           ACCESS_TOKEN: ${{ steps.refresh_token.outputs.access_token }}
-        run: node generate_svg.js
+          MONTHLY_GOAL_KM: ${{ vars.MONTHLY_GOAL_KM }}
+          WEEKLY_GOAL_KM: ${{ vars.WEEKLY_GOAL_KM }}
+          WEEKLY_GOAL_HOURS: ${{ vars.WEEKLY_GOAL_HOURS }}
+        run: |
+          node src/generate_weekly_svg.js
+          node src/generate_gear_svg.js
+          node src/generate_comparison_svg.js
+          node src/generate_goal_svg.js
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update Strava stats SVG [skip ci]"
-          file_pattern: "strava-stats.svg"
+          commit_message: "Update Strava stats widgets [skip ci]"
+          file_pattern: "widgets/*.svg"

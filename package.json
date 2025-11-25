@@ -1,7 +1,7 @@
 {
   "name": "strava-status-wiget",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/generate_weekly_svg.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

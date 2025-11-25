@@ -1,0 +1,62 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .title { font-size: 16px; font-weight: bold; fill: #333; }
+    .label { font-size: 12px; fill: #666; }
+    .value { font-size: 12px; font-weight: bold; fill: #333; }
+    @media (prefers-color-scheme: dark) {
+      .title { fill: #eee; }
+      .label { fill: #aaa; }
+      .value { fill: #eee; }
+    }
+  </style>
+  
+  <rect width="100%" height="100%" fill="none" />
+  
+  <text x="200" y="20" text-anchor="middle" class="title text">Last 4 Weeks Distance (km)</text>
+  
+  
+      <!-- Bar for 11/3 -->
+      <g transform="translate(40, 0)">
+        <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
+        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
+          <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        </rect>
+        <text x="20" y="175" text-anchor="middle" class="label">11/3</text>
+      </g>
+    
+      <!-- Bar for 11/10 -->
+      <g transform="translate(110, 0)">
+        <text x="20" y="125.09875949711036" text-anchor="middle" class="value">23.8</text>
+        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
+          <animate attributeName="height" from="0" to="29.90124050288963" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="130.09875949711036" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        </rect>
+        <text x="20" y="175" text-anchor="middle" class="label">11/10</text>
+      </g>
+    
+      <!-- Bar for 11/17 -->
+      <g transform="translate(180, 0)">
+        <text x="20" y="128.75066623470272" text-anchor="middle" class="value">20.9</text>
+        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
+          <animate attributeName="height" from="0" to="26.249333765297273" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="133.75066623470272" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        </rect>
+        <text x="20" y="175" text-anchor="middle" class="label">11/17</text>
+      </g>
+    
+      <!-- Bar for 11/24 -->
+      <g transform="translate(250, 0)">
+        <text x="20" y="35" text-anchor="middle" class="value">95.7</text>
+        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
+          <animate attributeName="height" from="0" to="120" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="40" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        </rect>
+        <text x="20" y="175" text-anchor="middle" class="label">11/24</text>
+      </g>
+    
+  
+  <!-- X軸の線 -->
+  <line x1="40" y1="160" x2="360" y2="160" stroke="#ccc" stroke-width="1" />
+</svg>
