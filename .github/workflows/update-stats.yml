@@ -31,13 +31,19 @@ jobs:
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
         run: node get_tokens.js
 
-      - name: Generate SVG
+      - name: Generate SVGs
         env:
           ACCESS_TOKEN: ${{ steps.refresh_token.outputs.access_token }}
-        run: node generate_svg.js
+          # Set your monthly goal here (km). You can also use ${{ vars.MONTHLY_GOAL_KM }} if configured.
+          MONTHLY_GOAL_KM: 200
+        run: |
+          node generate_svg.js
+          node generate_gear_svg.js
+          node generate_comparison_svg.js
+          node generate_goal_svg.js
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update Strava stats SVG [skip ci]"
-          file_pattern: "strava-stats.svg"
+          commit_message: "Update Strava stats widgets [skip ci]"
+          file_pattern: "*.svg"
