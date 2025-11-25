@@ -1,0 +1,139 @@
+import 'dotenv/config';
+import fetch from 'node-fetch';
+import fs from 'fs';
+
+const accessToken = process.env.ACCESS_TOKEN;
+
+if (!accessToken) {
+  console.error('エラー: 環境変数 ACCESS_TOKEN が見つかりません。');
+  process.exit(1);
+}
+
+async function getActivities() {
+  // 直近30件のアクティビティからギアを特定
+  const url = 'https://www.strava.com/api/v3/athlete/activities?per_page=30';
+  const response = await fetch(url, {
+    headers: {
+      'Authorization': `Bearer ${accessToken}`
+    }
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`API エラー (Activities): ${response.status} ${text}`);
+  }
+
+  return await response.json();
+}
+
+async function getGear(gearId) {
+  const url = `https://www.strava.com/api/v3/gear/${gearId}`;
+  const response = await fetch(url, {
+    headers: {
+      'Authorization': `Bearer ${accessToken}`
+    }
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`API エラー (Gear): ${response.status} ${text}`);
+  }
+
+  return await response.json();
+}
+
+function generateSVG(gear) {
+  const width = 300;
+  const height = 120;
+  const distanceKm = (gear.distance / 1000).toFixed(0);
+  
+  const bikeIcon = `
+    <g transform="scale(0.004, -0.004) translate(0, -11000)">
+      <path d="M4490 7890 c-14 -4 -153 -42 -310 -84 -255 -69 -288 -81 -318 -109 -18 -17 -37 -48 -42 -68 -11 -40 -13 -31 139 -598 l82 -305 -1974 -1975 c-1323 -1324 -1984 -1992 -2002 -2024 -78 -137 -84 -292 -16 -426 34 -67 117 -148 184 -181 43 -20 769 -219 2307 -631 1235 -330 2382 -637 2550 -682 l304 -82 12 -86 c40 -305 239 -539 524 -615 89 -24 272 -25 360 -1 409 110 644 533 514 927 -16 47 -23 84 -18 89 43 39 5097 4032 5105 4034 6 1 19 -26 29 -61 25 -91 70 -132 145 -132 35 0 622 153 656 170 30 16 68 70 75 104 6 35 7 32 -401 1556 -170 637 -169 634 -189 662 -25 35 -68 58 -113 58 -56 0 -641 -157 -676 -182 -55 -40 -70 -117 -41 -216 l7 -24 -3241 4 c-1782 1 -3243 5 -3246 8 -3 3 -52 183 -111 400 -58 217 -113 406 -123 419 -37 50 -108 72 -172 51z m6919 -1827 c0 -7 -5033 -4164 -5102 -4215 l-24 -17 -71 267 c-39 147 -128 479 -197 737 -70 259 -194 722 -276 1030 -83 308 -220 821 -306 1140 -85 319 -183 685 -217 813 l-63 232 306 1 c168 1 1406 5 2751 8 1345 4 2615 8 2823 9 207 1 377 -1 376 -5z m-6966 -831 c139 -524 287 -1078 617 -2307 310 -1157 348 -1300 347 -1302 -1 -1 -403 106 -892 237 -490 131 -1416 378 -2060 550 -643 172 -1172 315 -1175 317 -4 4 3011 3023 3020 3023 3 0 67 -233 143 -518z m1732 -4283 c24 -6 63 -27 86 -47 159 -137 63 -401 -147 -402 -106 0 -211 87 -228 189 -17 108 50 220 153 257 45 16 80 17 136 3z" fill="#FC4C02"/>
+    </g>
+  `;
+
+  const svg = `
+<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #333; }
+    .title { font-size: 14px; font-weight: bold; fill: #666; }
+    .gear-name { font-size: 18px; font-weight: bold; fill: #333; }
+    .distance { font-size: 24px; font-weight: bold; fill: #FC4C02; }
+    .unit { font-size: 14px; fill: #666; font-weight: normal; }
+    @media (prefers-color-scheme: dark) {
+      .text { fill: #eee; }
+      .title { fill: #aaa; }
+      .gear-name { fill: #eee; }
+      .unit { fill: #aaa; }
+    }
+    .fade-in { animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+  
+  <rect width="100%" height="100%" fill="none" />
+  
+  <!-- アイコン -->
+  <g transform="translate(10, 30)">
+    ${bikeIcon}
+  </g>
+  
+  <!-- テキスト情報 -->
+  <g transform="translate(80, 0)" class="fade-in">
+    <text x="0" y="30" class="title">My Favorite Gear</text>
+    <text x="0" y="60" class="gear-name">${gear.name}</text>
+    <text x="0" y="95" class="distance">${distanceKm} <tspan class="unit">km</tspan></text>
+  </g>
+</svg>
+`;
+  return svg.trim();
+}
+
+async function main() {
+  try {
+    // 1. 直近のアクティビティを取得
+    const activities = await getActivities();
+    
+    if (activities.length === 0) {
+      console.log('アクティビティが見つかりませんでした。');
+      return;
+    }
+
+    // 2. ギアを集計
+    const gearStats = {};
+    activities.forEach(activity => {
+      if (activity.gear_id) {
+        if (!gearStats[activity.gear_id]) {
+          gearStats[activity.gear_id] = 0;
+        }
+        gearStats[activity.gear_id] += activity.distance;
+      }
+    });
+
+    const gearIds = Object.keys(gearStats);
+    if (gearIds.length === 0) {
+      console.log('アクティビティにギア情報が含まれていませんでした。');
+      return;
+    }
+
+    // 3. 最も距離が長いギアIDを特定
+    const favoriteGearId = gearIds.reduce((a, b) => gearStats[a] > gearStats[b] ? a : b);
+    
+    console.log(`Most used gear ID found: ${favoriteGearId}`);
+
+    // 4. ギアの詳細情報を取得
+    const gear = await getGear(favoriteGearId);
+    
+    console.log(`Favorite Gear: ${gear.name} (${gear.distance}m)`);
+
+    const svgContent = generateSVG(gear);
+    fs.writeFileSync('favorite_gear.svg', svgContent);
+    console.log('favorite_gear.svg を生成しました。');
+
+  } catch (error) {
+    console.error('エラーが発生しました:', error);
+    process.exit(1);
+  }
+}
+
+main();
