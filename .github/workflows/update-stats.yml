@@ -29,7 +29,7 @@ jobs:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
-        run: node get_tokens.js
+        run: node src/get_tokens.js
 
       - name: Generate SVGs
         env:
@@ -37,10 +37,10 @@ jobs:
           # Set your monthly goal here (km). You can also use ${{ vars.MONTHLY_GOAL_KM }} if configured.
           MONTHLY_GOAL_KM: 200
         run: |
-          node generate_svg.js
-          node generate_gear_svg.js
-          node generate_comparison_svg.js
-          node generate_goal_svg.js
+          node src/generate_svg.js
+          node src/generate_gear_svg.js
+          node src/generate_comparison_svg.js
+          node src/generate_goal_svg.js
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v5
