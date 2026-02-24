@@ -48,10 +48,10 @@
     
       <!-- Bar for 2/23 -->
       <g transform="translate(250, 0)">
-        <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
+        <text x="20" y="112.9748" text-anchor="middle" class="value">3.5</text>
         <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
-          <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-          <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="height" from="0" to="42.0252" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="117.9748" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
         </rect>
         <text x="20" y="175" text-anchor="middle" class="label">2/23</text>
       </g>
