@@ -27,18 +27,18 @@
   
   <!-- 距離 -->
   <text x="20" y="60" class="label">Distance</text>
-  <text x="280" y="60" class="value" text-anchor="end">13.4 km</text>
+  <text x="280" y="60" class="value" text-anchor="end">9.3 km</text>
   <rect x="20" y="70" width="200" height="10" rx="5" fill="#ddd" />
   <rect x="20" y="70" width="0" height="10" rx="5" fill="#FC4C02">
-    <animate attributeName="width" from="0" to="26.8106" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+    <animate attributeName="width" from="0" to="18.611600000000003" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
   </rect>
 
   <!-- 時間 -->
   <text x="20" y="100" class="label">Time</text>
-  <text x="280" y="100" class="value" text-anchor="end">1.1 h</text>
+  <text x="280" y="100" class="value" text-anchor="end">0.8 h</text>
   <rect x="20" y="110" width="200" height="10" rx="5" fill="#ddd" />
   <rect x="20" y="110" width="0" height="10" rx="5" fill="#FC4C02">
-    <animate attributeName="width" from="0" to="21.933333333333334" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+    <animate attributeName="width" from="0" to="15.577777777777776" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
   </rect>
   
   <text x="20" y="140" class="label" style="font-size: 10px;">Last 7 Days</text>
