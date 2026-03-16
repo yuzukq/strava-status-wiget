@@ -16,44 +16,44 @@
   <text x="200" y="20" text-anchor="middle" class="title text">Last 4 Weeks Distance (km)</text>
   
   
-      <!-- Bar for 2/16 -->
-      <g transform="translate(40, 0)">
-        <text x="20" y="59.70320000000001" text-anchor="middle" class="value">7.9</text>
-        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
-          <animate attributeName="height" from="0" to="95.29679999999999" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-          <animate attributeName="y" from="160" to="64.70320000000001" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-        </rect>
-        <text x="20" y="175" text-anchor="middle" class="label">2/16</text>
-      </g>
-    
       <!-- Bar for 2/23 -->
-      <g transform="translate(110, 0)">
+      <g transform="translate(40, 0)">
         <text x="20" y="63.7808" text-anchor="middle" class="value">7.6</text>
         <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
-          <animate attributeName="height" from="0" to="91.2192" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-          <animate attributeName="y" from="160" to="68.7808" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="height" from="0" to="91.2192" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="68.7808" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
         </rect>
         <text x="20" y="175" text-anchor="middle" class="label">2/23</text>
       </g>
     
       <!-- Bar for 3/2 -->
-      <g transform="translate(180, 0)">
+      <g transform="translate(110, 0)">
         <text x="20" y="43.33039999999998" text-anchor="middle" class="value">9.3</text>
         <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
-          <animate attributeName="height" from="0" to="111.66960000000002" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-          <animate attributeName="y" from="160" to="48.33039999999998" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="height" from="0" to="111.66960000000002" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="48.33039999999998" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
         </rect>
         <text x="20" y="175" text-anchor="middle" class="label">3/2</text>
       </g>
     
       <!-- Bar for 3/9 -->
+      <g transform="translate(180, 0)">
+        <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
+        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
+          <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        </rect>
+        <text x="20" y="175" text-anchor="middle" class="label">3/9</text>
+      </g>
+    
+      <!-- Bar for 3/16 -->
       <g transform="translate(250, 0)">
         <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
         <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
           <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
           <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
         </rect>
-        <text x="20" y="175" text-anchor="middle" class="label">3/9</text>
+        <text x="20" y="175" text-anchor="middle" class="label">3/16</text>
       </g>
     
   
