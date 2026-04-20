@@ -16,44 +16,44 @@
   <text x="200" y="20" text-anchor="middle" class="title text">Last 4 Weeks Distance (km)</text>
   
   
-      <!-- Bar for 3/23 -->
+      <!-- Bar for 3/30 -->
       <g transform="translate(40, 0)">
         <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
         <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
           <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
           <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
         </rect>
-        <text x="20" y="175" text-anchor="middle" class="label">3/23</text>
+        <text x="20" y="175" text-anchor="middle" class="label">3/30</text>
       </g>
     
-      <!-- Bar for 3/30 -->
+      <!-- Bar for 4/6 -->
       <g transform="translate(110, 0)">
         <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
         <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
           <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
           <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
         </rect>
-        <text x="20" y="175" text-anchor="middle" class="label">3/30</text>
-      </g>
-    
-      <!-- Bar for 4/6 -->
-      <g transform="translate(180, 0)">
-        <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
-        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
-          <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-          <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-        </rect>
         <text x="20" y="175" text-anchor="middle" class="label">4/6</text>
       </g>
     
       <!-- Bar for 4/13 -->
-      <g transform="translate(250, 0)">
+      <g transform="translate(180, 0)">
         <text x="20" y="35" text-anchor="middle" class="value">15.4</text>
         <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
-          <animate attributeName="height" from="0" to="120" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
-          <animate attributeName="y" from="160" to="40" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="height" from="0" to="120" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="40" dur="0.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
         </rect>
         <text x="20" y="175" text-anchor="middle" class="label">4/13</text>
+      </g>
+    
+      <!-- Bar for 4/20 -->
+      <g transform="translate(250, 0)">
+        <text x="20" y="155" text-anchor="middle" class="value">0.0</text>
+        <rect y="160" width="40" height="0" fill="#FC4C02" rx="4">
+          <animate attributeName="height" from="0" to="0" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+          <animate attributeName="y" from="160" to="160" dur="0.8s" begin="0.6000000000000001s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        </rect>
+        <text x="20" y="175" text-anchor="middle" class="label">4/20</text>
       </g>
     
   
