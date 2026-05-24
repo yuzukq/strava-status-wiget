@@ -14,16 +14,16 @@
   <rect width="100%" height="100%" fill="none" />
   
   <text x="20" y="25" class="title text">Monthly Goal</text>
-  <text x="280" y="25" text-anchor="end" class="percentage text">0%</text>
+  <text x="280" y="25" text-anchor="end" class="percentage text">40%</text>
   
   <!-- プログレスバー背景 -->
   <rect x="20" y="40" width="260" height="12" rx="6" fill="#eee" />
   
   <!-- プログレスバー本体 -->
   <rect x="20" y="40" width="0" height="12" rx="6" fill="#FC4C02">
-    <animate attributeName="width" from="0" to="0" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+    <animate attributeName="width" from="0" to="105.79387" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
   </rect>
   
-  <text x="20" y="70" class="status text">0.0 km / 200 km</text>
-  <text x="280" y="70" text-anchor="end" class="goal-text text">200.0 km to go</text>
+  <text x="20" y="70" class="status text">81.4 km / 200 km</text>
+  <text x="280" y="70" text-anchor="end" class="goal-text text">118.6 km to go</text>
 </svg>

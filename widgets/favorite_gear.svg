@@ -30,6 +30,6 @@
   <g transform="translate(80, 0)" class="fade-in">
     <text x="0" y="30" class="title">My Favorite Gear</text>
     <text x="0" y="60" class="gear-name">DE ROSA SK Pininfarina</text>
-    <text x="0" y="95" class="distance">5885 <tspan class="unit">km</tspan></text>
+    <text x="0" y="95" class="distance">5966 <tspan class="unit">km</tspan></text>
   </g>
 </svg>
