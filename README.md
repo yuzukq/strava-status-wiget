@@ -1,6 +1,8 @@
 # 🚴 Strava Activity Widgets
 
-あなたのStravaアクティビティデータ（走行距離、使用機材、目標進捗など）を、クールなSVGウィジェットとしてGitHubプロフィールに自動表示します。GitHub Actionsを利用して毎日自動更新されます。
+> ⚠️ **お知らせ（2026年8月時点）**: Strava API利用規約の変更により、2026年6月以降はAPIアクセスに対象StravaアカウントでのSubscription（有料サブスクリプション）加入が必須となりました（[Strava公式アナウンス](https://communityhub.strava.com/insider-journal-9/an-update-to-our-developer-program-13428)）。これに伴い本リポジトリの自動更新（daily schedule）は停止しています。利用する場合は、ご自身のStravaアカウントでSubscriptionへの加入が必要です。
+
+あなたのStravaアクティビティデータ（走行距離、使用機材、目標進捗など）を、クールなSVGウィジェットとしてGitHubプロフィールに表示します。GitHub Actionsを利用して更新します。
 
 ## 利用可能なウィジェット
 
@@ -25,7 +27,7 @@
 
 ## 特徴
 
-*   **完全自動化**: GitHub Actionsが毎日データを取得・更新します。
+*   **手動/自動更新**: GitHub Actionsで手動実行（`workflow_dispatch`）してデータを更新できます（上記お知らせの通り、現在は定期自動実行は停止中です）。
 *   **リッチな表現**: CSSアニメーション付きのSVGグラフ。
 *   **簡単セットアップ**: GitHub Codespacesを使えば、ブラウザだけでセットアップが完結します。
 

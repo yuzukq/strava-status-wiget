@@ -1,8 +1,10 @@
 name: Update Strava Stats
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Daily at 00:00 UTC
+  # Strava APIが2026年6月よりサブスクリプション必須化されたため、
+  # 定期実行(schedule)は停止中。必要な場合は手動実行(workflow_dispatch)のみ。
+  # schedule:
+  #   - cron: '0 0 * * *' # Daily at 00:00 UTC
   workflow_dispatch:
 
 jobs:
